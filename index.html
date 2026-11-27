@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1C4A3A">
+  <title>長照離我們很近嗎？長照 3.0 與家庭財務思辨指南</title>
+  <meta name="description" content="給家庭看的長照互動指南：真實台灣案例、長照 3.0 申請資格、巴氏量表檢核、10 年費用試算，以及為什麼政府補助之外仍需要雙軌財務規劃。">
+  <meta property="og:title" content="長照離我們很近嗎？長照 3.0 與家庭財務思辨指南">
+  <meta property="og:description" content="用真實案例、官方數據與互動試算，看懂長照 3.0 能幫上什麼、家裡還要自己準備什麼。">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;800&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 64 64" fill="none"><path d="M32 10c-6 8-16 15-16 26a16 16 0 1 0 32 0c0-11-10-18-16-26z" fill="#F4E6C8"/></svg>
+      </span>
+      <span>
+        <span class="brand-title">長照思辨指南</span>
+        <span class="brand-sub">長照 3.0 之後，家庭還要準備什麼</span>
+      </span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="開啟選單">
+      <span></span>
+    </button>
+    <nav class="nav" id="site-nav" aria-label="章節">
+      <a href="#near">離我們很近嗎</a>
+      <a href="#qualify">符合資格</a>
+      <a href="#cost">所需費用</a>
+      <a href="#policy">3.0 與缺口</a>
+      <a href="#plan">現在規劃</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap">
+        <div class="hero-card">
+          <div class="hero-badge">給家庭看的長照財務思辨 · 2026 長照 3.0</div>
+          <h1>長照，離我們很近嗎？</h1>
+          <p class="lede">國人平均餘命 80.77 歲，其中不健康餘命約 7.78 年。長照不一定發生在很老以後，也可能是一場突然的中風、一次年輕型失智。先花一分鐘想想你家的情況，再看真實數據與案例。</p>
+
+          <div class="quiz" id="quiz">
+            <div class="quiz-progress" aria-hidden="true">
+              <div class="quiz-dot on"></div>
+              <div class="quiz-dot"></div>
+              <div class="quiz-dot"></div>
+            </div>
+
+            <div class="quiz-step" data-step="1">
+              <h2 class="quiz-q">如果今天家人需要照顧，你第一個會怎麼選？</h2>
+              <div class="choices">
+                <button class="choice" type="button" data-q="1" data-val="family">家人自己顧<small>看起來最省錢，卻最耗時間與身體</small></button>
+                <button class="choice" type="button" data-q="1" data-val="foreign">請外籍看護<small>常見的全天居家方案</small></button>
+                <button class="choice" type="button" data-q="1" data-val="domestic">請本國看護<small>費用較高，人力也較緊</small></button>
+                <button class="choice" type="button" data-q="1" data-val="inst_double">送機構（雙人房）<small>專業照護，但自付壓力大</small></button>
+                <button class="choice" type="button" data-q="1" data-val="inst_single">送機構（單人房）<small>隱私較高，月費常超過 7 萬</small></button>
+              </div>
+              <div class="feedback" id="quiz-feedback-1" aria-live="polite"></div>
+              <div class="btn-row">
+                <button class="btn" type="button" data-next="2">看完回饋，下一題</button>
+              </div>
+            </div>
+
+            <div class="quiz-step" data-step="2" hidden>
+              <h2 class="quiz-q">你覺得政府長照 3.0 可以幫你出幾成？</h2>
+              <div class="choices">
+                <button class="choice" type="button" data-q="2" data-val="almost">幾乎全額<small>八成以上，剩下自己再補一點</small></button>
+                <button class="choice" type="button" data-q="2" data-val="half">一半左右<small>政府和家裡大概各出一半</small></button>
+                <button class="choice" type="button" data-q="2" data-val="third">大概兩三成<small>政府打底，家裡還是要出大部分</small></button>
+                <button class="choice" type="button" data-q="2" data-val="unsure">先說實話，我不確定<small>這正是我們要一起算清楚的</small></button>
+              </div>
+              <div class="feedback" id="quiz-feedback-2" aria-live="polite"></div>
+              <div class="btn-row">
+                <button class="btn-ghost btn" type="button" data-back="1">上一題</button>
+                <button class="btn" type="button" data-next="3">下一題</button>
+              </div>
+            </div>
+
+            <div class="quiz-step" data-step="3" hidden>
+              <h2 class="quiz-q">如果這筆費用要持續 8–10 年，你希望這筆錢從哪裡來？</h2>
+              <div class="choices">
+                <button class="choice" type="button" data-q="3" data-val="deposit">家庭存款<small>先用存下來的錢撐著</small></button>
+                <button class="choice" type="button" data-q="3" data-val="children">子女分擔<small>由下一代一起扛</small></button>
+                <button class="choice" type="button" data-q="3" data-val="gov">政府補助應該就夠了<small>靠長照 3.0 支持</small></button>
+                <button class="choice" type="button" data-q="3" data-val="insurance">保險規劃<small>用預定的現金流來補缺口</small></button>
+                <button class="choice" type="button" data-q="3" data-val="later">還沒想過<small>大多數家庭一開始都是這樣</small></button>
+              </div>
+              <div class="feedback" id="quiz-feedback-3" aria-live="polite"></div>
+              <div class="btn-row">
+                <button class="btn-ghost btn" type="button" data-back="2">上一題</button>
+                <a class="btn" href="#near">接著看真實案例</a>
+                <a class="btn-ghost btn" href="#cost">直接做 10 年試算</a>
+              </div>
+            </div>
+          </div>
+
+          <p class="quote-line">用長照 3.0 支撐生活，用商業保險維繫尊嚴。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="near">
+      <div class="wrap">
+        <p class="section-kicker">第一章</p>
+        <h2>離我們很近嗎？真實案例與台灣現況</h2>
+        <p class="lede">長照不是「老了才會遇到」的遙遠議題。下面這些數字來自主計處、衛福部與公開報導，點開案例可以看到真實家庭曾經走過的路。</p>
+
+        <div class="grid grid-4">
+          <article class="stat">
+            <div class="num" data-count="80.77 歲">80.77 歲</div>
+            <p>國人平均餘命；其中不健康餘命約 <strong>7.78 年</strong>。</p>
+            <p class="src">來源：主計處，引自銀天下／天下雜誌</p>
+          </article>
+          <article class="stat">
+            <div class="num" data-count="39.8 萬"><em>39.8</em> 萬</div>
+            <p>衛福部預估 2026 年台灣失智人口。</p>
+            <p class="src">來源：衛福部，引自銀天下／天下雜誌</p>
+          </article>
+          <article class="stat">
+            <div class="num" data-count="63%">63%</div>
+            <p>家人照顧占比；平均每日 13 小時以上，照顧年期平均 8–9 年。</p>
+            <p class="src">來源：銀天下／天下雜誌整理</p>
+          </article>
+          <article class="stat">
+            <div class="num" data-count="92.29 萬">92.29 萬</div>
+            <p>推估 2026 年失能人口，2035 年可能增至 129.59 萬人。</p>
+            <p class="src">來源：牙驛通整理自衛福部《長期照顧十年計畫 3.0》</p>
+          </article>
+        </div>
+
+        <h3 style="margin-top:28px">三則有出處的台灣真實故事</h3>
+        <p class="note">以下整理自公開新聞與專題報導，為尊重當事人，僅摘述已公開事實，不添加未報導情節。點開可閱讀重點。</p>
+        <div class="grid" style="margin-top:12px">
+          <details class="case">
+            <summary>
+              <span class="case-tag">中壯年突發</span>
+              <span>43 歲除草工突然中風，妻子一邊上班一邊籌看護費</span>
+            </summary>
+            <div class="body">
+              <p>43 歲的阿傑原本做除草零工，妻子阿瑋在老人護理之家擔任照服員，夫妻養育四名子女。8 月底阿傑突發腦中風，造成右側癱瘓、無法說話，並接受開顱減壓。住院復健期間需要全天照料，扣除低收入戶補助後，每日看護差額仍要 2,200 元；阿瑋說低收看護補助最多約 2 個月，之後每日看護費約要 2,000 元，只能先向親友借錢撐著。</p>
+              <p>這則故事提醒我們：長照不一定發生在退休以後。正值承擔家計的年紀若突然失能，收入中斷與照顧費會同時到來。</p>
+              <p class="src-link">出處：蘋果慈善基金會〈43歲除草工中風失語　照服員妻努力扛家〉，韓旭爾報導。<a href="https://www.apcharity.org.tw/article/732895" target="_blank" rel="noopener">閱讀原文</a></p>
+            </div>
+          </details>
+          <details class="case">
+            <summary>
+              <span class="case-tag">年輕型失智</span>
+              <span>26 歲起成為主要照顧者，照顧 58 歲確診的母親</span>
+            </summary>
+            <div class="body">
+              <p>護理師劉芸妡從 26 歲以後就是全職主要照顧者，照顧 58 歲確診年輕型失智症的母親。她提到年輕型失智常發生在尚未退休時，家庭財務與生活節奏會一起被打亂。為了上班安全，家中裝了監視器，出門仍要惦記母親有沒有吃飯、有沒有換上乾淨衣服；她也曾因壓力幾乎招架不住，後來聘請看護才重新得到喘息。</p>
+              <p>她估算，若要維持較理想的照顧品質，即使是勉強維持在輕度的失智症患者，一個月大概至少也需要三、四萬元，經濟壓力非常大。失智，不一定只發生在「很老的長輩」身上。</p>
+              <p class="src-link">出處：聯合報／元氣網〈照顧者相對論／劉芸妡〉，2025 年 9 月 19 日。<a href="https://health.udn.com/health/story/121922/9013643" target="_blank" rel="noopener">閱讀原文</a></p>
+            </div>
+          </details>
+          <details class="case">
+            <summary>
+              <span class="case-tag">高齡家庭照顧</span>
+              <span>獨自照顧中風失智母親 4 年：「我丟了工作，就沒錢請看護」</span>
+            </summary>
+            <div class="body">
+              <p>林小姐的母親 88 歲，4 年前中風造成血管性失智。她曾聘請外籍看護，約一年後因照顧時間與工作衝突，「我丟了工作就沒錢請看護。」此後她孤軍奮戰 4 年，連外出都特別小心，最怕自己出意外後，沒有人知道家中還有無法自理的母親，因此隨身帶著一張寫有地址與求助說明的小卡。</p>
+              <p>她平時使用居家服務協助如廁、洗澡，週末必要時申請喘息。這個案例把家庭照顧最真實的循環說得很清楚：工作與照顧互相排擠，沒有收入就更難找到替手。</p>
+              <p class="src-link">出處：中央社〈獨自家庭照顧怕出門　憂出意外無人顧失能母〉，2023 年 10 月 30 日。<a href="https://www.cna.com.tw/news/ahel/202310300288.aspx" target="_blank" rel="noopener">閱讀原文</a></p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="qualify" style="background:linear-gradient(#efe8dc,#f6f1e8);">
+      <div class="wrap">
+        <p class="section-kicker">第二章</p>
+        <h2>長照符合資格：先分清兩套標準</h2>
+        <p class="lede">政府長照 3.0 看的是「能不能申請服務與補助」；商業長照險看的是「是否達到保單約定的長期照顧狀態」。兩套標準不一樣，請點選切換並親手檢核。</p>
+
+        <div class="tabs" role="tablist">
+          <button class="tab active" type="button" data-group="qual" data-target="panel-gov" role="tab">政府長照 3.0 申請資格</button>
+          <button class="tab" type="button" data-group="qual" data-target="panel-ins" role="tab">商業長照險理賠標準</button>
+        </div>
+
+        <div class="panel active" id="panel-gov" data-group="qual">
+          <h3>誰可以提出申請？</h3>
+          <p>須因身心失能，預期或已達 6 個月以上無法生活自理，並經各縣市長期照顧管理中心評估為長照需要等級第 2 級以上，同時符合下列身分之一（2026 年 1 月 1 日起擴大）：</p>
+          <ul class="check-list">
+            <li><label><input class="elig-id" type="checkbox"> 65 歲以上失能長者</label></li>
+            <li><label><input class="elig-id" type="checkbox"> 55 歲以上失能原住民</label></li>
+            <li><label><input class="elig-id" type="checkbox"> 領有身心障礙證明，且有長照需求</label></li>
+            <li><label><input class="elig-id" type="checkbox"> 全年齡失智症者（含 49 歲以下年輕型失智），且經評估有失能與長照需求</label></li>
+            <li><label><input class="elig-id" type="checkbox"> 評估期間符合健保署急性後期整合照護計畫（PAC）收案對象</label></li>
+          </ul>
+          <ul class="check-list" style="margin-top:8px">
+            <li><label><input id="elig-duration" type="checkbox"> 預期或已達 6 個月以上，生活無法自理</label></li>
+            <li><label><input id="elig-cms" type="checkbox"> 了解須經照管中心評估達第 2–8 級（第 1 級不納入給付）</label></li>
+          </ul>
+          <div class="adl-result" id="elig-result"></div>
+          <h3 style="margin-top:22px">怎麼申請？四個步驟</h3>
+          <div class="steps">
+            <div class="step"><strong>撥打 1966 或線上申請</strong><br>也可聯絡當地長期照顧管理中心；住院期間可找出院準備銜接長照服務小組。</div>
+            <div class="step"><strong>照管專員到府評估</strong><br>確認長照需要等級與給付額度。</div>
+            <div class="step"><strong>與個管討論照顧計畫</strong><br>連結居家服務、日照、交通、輔具、喘息等資源。</div>
+            <div class="step"><strong>由特約單位提供服務</strong><br>補助不會因經濟狀況打折，差在部分負擔比例。</div>
+          </div>
+          <p class="note" style="margin-top:12px">依據：衛福部 1966 長照專區、全國法規資料庫《長期照顧服務申請及給付辦法》。牙驛通〈2026 長照 3.0 懶人包〉亦有整理申請流程。</p>
+        </div>
+
+        <div class="panel" id="panel-ins" data-group="qual">
+          <h3>商業長照險：兩條路，符合一條即可</h3>
+          <p>依金管會《長期照顧保險單示範條款》，「長期照顧狀態」是指經專科醫師診斷判定，符合生理功能障礙<strong>或</strong>認知功能障礙之一。請試著勾選家人目前需要協助的項目（這是教育檢核，不是理賠審查）。</p>
+
+          <h3>生理功能障礙：巴氏量表六項，勾滿三項</h3>
+          <p class="note">條文要的是「須別人協助」，不是「做起來比較慢」。勾選看看：</p>
+          <div class="adl-list" id="adl-list"></div>
+          <div class="adl-result" id="adl-result" aria-live="polite"></div>
+
+          <h3 style="margin-top:22px">認知功能障礙：CDR 達中度以上</h3>
+          <div class="cost-card">
+            <p>須為持續失智狀態（符合 ICD-10-CM 相關分類），且依臨床失智量表（CDR）評估達中度（含）以上，也就是<strong>整體 CDR ≧ 2 分</strong>（不是把各分項分數加總）。輕度失智（CDR 1）通常尚未達到這條門檻。</p>
+            <p class="note">多數保單另有等待期或免責期，常見約 90 日；若醫師判定為終身無法治癒，部分條款可不受該期間限制。專科醫師通常指復健科、神經科、精神科或主要疾病相關科別。實際認定以各保單條款為準。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cost">
+      <div class="wrap">
+        <p class="section-kicker">第三章</p>
+        <h2>長照所需費用有哪些？先拆開，再算 10 年</h2>
+        <p class="lede">長照花費不只「請人」或「住機構」。日常耗材、輔具改造、就醫交通，以及家人離開職場的薪資損失，都可能成為家庭要面對的帳。</p>
+
+        <div class="grid grid-2">
+          <article class="cost-card">
+            <h3>1. 照顧人力費（四種模式）</h3>
+            <p>家人照顧看似 0 元，但平均每日 13 小時、持續 8–9 年。外籍看護每月約 <span class="price">26,000–32,000 元</span>（含膳宿）；本國看護約 <span class="price">45,000–90,000 元</span>；醫院臨時看護每日約 <span class="price">2,600–3,200 元</span>。機構收費約 21,000–70,000 元以上，雙人房約 <span class="price">45,000–60,000 元</span>，單人房可能 <span class="price">70,000 元以上</span>。</p>
+            <p class="note">來源：銀天下／天下雜誌（勞動部與長照業界統計）。外籍看護 10 年約 430 萬以上，機構雙人房 10 年約 680 萬以上。</p>
+          </article>
+          <article class="cost-card">
+            <h3>2. 日常消耗品與營養</h3>
+            <p>保險事業發展中心整理的參考行情：成人紙尿布約 <span class="price">3,600 元／月</span>、營養品約 <span class="price">7,500 元／月</span>、三管（尿管、鼻胃管、氣切管）耗材約 <span class="price">1,000–2,000 元／月</span>、衛生用品約 <span class="price">2,000 元／月</span>。本站試算將「一般耗材」設為每月 8,000 元，若加上管灌／特殊營養則約 14,600 元。</p>
+            <p class="note">來源：保險事業發展中心，經藥師+轉引。實際用量依體況差異很大。</p>
+          </article>
+          <article class="cost-card">
+            <h3>3. 輔具與居家無障礙</h3>
+            <p>常見一次支出：輪椅約 3,000–15,000 元、電動床約 15,000–60,000 元、氣墊床約 8,000–30,000 元、移位機約 30,000–80,000 元，衛浴扶手、防滑與環境改善常見數萬至十萬以上。保險事業發展中心曾估算相關一次性支出約 5–9 萬元。試算以 <span class="price">80,000 元</span> 作為代表性一次投入。</p>
+            <p class="note">長照輔具每 3 年第一組 4 萬或第二組智慧輔具租賃 6 萬（二擇一），一般戶部分負擔 30%。</p>
+          </article>
+          <article class="cost-card">
+            <h3>4. 醫療復健、交通與家人隱形成本</h3>
+            <p>長照交通接送主要用於就醫、復健或透析，月額度約 1,680–2,400 元（分區），一般戶部分負擔較高。家人若請假、留職停薪或離職，隱形成本更可觀：主計處平均月薪 <span class="price">44,300 元</span>，10 年機會成本約超過 <span class="price">530 萬元</span>。</p>
+            <p class="note">來源：衛福部 1966 給付額度表；主計處月薪，引自銀天下／天下雜誌。</p>
+          </article>
+        </div>
+
+        <h3 style="margin-top:32px">10 年費用互動試算器</h3>
+        <p class="note">選擇照顧模式、年數、身分別與是否計入耗材、輔具、薪資損失，即時看到總花費、政府最多能補多少，以及家庭仍要自籌的資金缺口。你在開頭選擇的照顧方式會自動帶入，可再調整。</p>
+
+        <div class="calc" id="calculator">
+          <div class="calc-layout">
+            <div>
+              <div class="field">
+                <label>照顧模式</label>
+                <div class="seg five" role="group">
+                  <button class="pill" type="button" data-mode="family">家人照顧</button>
+                  <button class="pill on" type="button" data-mode="foreign">外籍看護</button>
+                  <button class="pill" type="button" data-mode="domestic">本國看護</button>
+                  <button class="pill" type="button" data-mode="inst_double">機構雙人房</button>
+                  <button class="pill" type="button" data-mode="inst_single">機構單人房</button>
+                </div>
+                <p class="note" id="mode-hint">約 26,000–32,000 元／月（含膳宿）</p>
+              </div>
+              <div class="field">
+                <label for="years">照顧年數（平均常見 8–10 年）</label>
+                <div class="range-row">
+                  <input id="years" type="range" min="3" max="15" value="10">
+                  <span class="years-val" id="years-val">10 年</span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="cms">長照需要等級（CMS）</label>
+                <select id="cms">
+                  <option value="2">第 2 級（照顧及專業服務 10,020 元／月）</option>
+                  <option value="3">第 3 級（15,460 元／月）</option>
+                  <option value="4">第 4 級（18,580 元／月，可申請住宿式補助）</option>
+                  <option value="5" selected>第 5 級（24,100 元／月）</option>
+                  <option value="6">第 6 級（28,070 元／月）</option>
+                  <option value="7">第 7 級（32,090 元／月，喘息額度較高）</option>
+                  <option value="8">第 8 級（36,180 元／月）</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="household">家庭身分別（部分負擔）</label>
+                <select id="household">
+                  <option value="general" selected>一般戶（照顧／喘息自負 16%）</option>
+                  <option value="mid">中低收入戶（自負 5%）</option>
+                  <option value="low">低收入戶（政府全額補助額度內費用）</option>
+                </select>
+              </div>
+              <div class="toggles">
+                <label class="toggle"><span>計入日常耗材（尿布、看護墊、濕紙巾等，約 8,000 元／月）</span><input id="toggle-cons" type="checkbox" checked></label>
+                <label class="toggle"><span>耗材改含管灌／特殊營養（約 14,600 元／月）</span><input id="toggle-nutrition" type="checkbox"></label>
+                <label class="toggle"><span>計入輔具與居家改造（一次約 80,000 元）</span><input id="toggle-assist" type="checkbox" checked></label>
+                <label class="toggle" id="salary-wrap"><span id="salary-label">計入家人因照顧而請假／離職的薪資損失</span><input id="toggle-salary" type="checkbox"></label>
+              </div>
+            </div>
+            <div>
+              <div class="results">
+                <div class="result">
+                  <p class="k">總花費（含你勾選的項目）</p>
+                  <p class="v" id="res-total">—</p>
+                  <p class="note" id="res-total-sub"></p>
+                </div>
+                <div class="result gov">
+                  <p class="k">政府最多可補助（額度用滿時）</p>
+                  <p class="v" id="res-gov">—</p>
+                  <p class="note" id="res-gov-sub"></p>
+                </div>
+                <div class="result gap">
+                  <p class="k">家庭仍需自籌的資金缺口</p>
+                  <p class="v" id="res-gap">—</p>
+                  <p class="note" id="res-gap-sub"></p>
+                </div>
+                <div class="result">
+                  <p class="k">政府補助約占總花費</p>
+                  <p class="v" id="res-cover">—</p>
+                </div>
+              </div>
+              <div class="bars" aria-hidden="true">
+                <div class="bar-row">
+                  <div class="bar-lab"><span>總花費</span><span id="bar-total-n"></span></div>
+                  <div class="bar-track"><div class="bar-fill total" id="bar-total"></div></div>
+                </div>
+                <div class="bar-row">
+                  <div class="bar-lab"><span>政府最多補助</span><span id="bar-gov-n"></span></div>
+                  <div class="bar-track"><div class="bar-fill gov" id="bar-gov"></div></div>
+                </div>
+                <div class="bar-row">
+                  <div class="bar-lab"><span>家庭缺口</span><span id="bar-gap-n"></span></div>
+                  <div class="bar-track"><div class="bar-fill gap" id="bar-gap"></div></div>
+                </div>
+              </div>
+              <p class="insight" id="calc-insight"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="policy" style="background:linear-gradient(#f6f1e8,#efe8dc);">
+      <div class="wrap">
+        <p class="section-kicker">第四章</p>
+        <h2>政府長照 3.0：做了哪些好事，為什麼還有缺口？</h2>
+        <p class="lede">長照 3.0（2026–2035）的願景是「健康老化、在地安老、安寧善終」。它確實比 2.0 更完整，但完整不等於「全部支出都由政府買單」。</p>
+
+        <h3>長照 3.0 的八大方向</h3>
+        <div class="chip-row">
+          <span class="chip">共生社區與健康老化</span>
+          <span class="chip">醫療照顧整合</span>
+          <span class="chip">出院準備與復能</span>
+          <span class="chip">提升機構量能</span>
+          <span class="chip">強化家庭支持</span>
+          <span class="chip">智慧科技輔具</span>
+          <span class="chip">安寧善終與 ACP</span>
+          <span class="chip">照顧人力專業化</span>
+        </div>
+        <p class="note">整理自牙驛通〈2026 長照 3.0 懶人包〉，該文參考衛生福利部《長期照顧十年計畫 3.0》。行政院亦指出，長照 3.0 首年投入約 1,153 億元。</p>
+
+        <h3>三階段上路，服務逐步到位</h3>
+        <div class="timeline">
+          <article class="tl">
+            <time>2025／9／1 起</time>
+            <p>放寬外籍看護家庭使用社區式照顧與喘息；交通接送每趟補助提高（一般區 100→115 元，原鄉離島 120→140 元）；營養照護改為每案 3 次共 4,500 元；居家喘息在安全情況下可陪同至戶外。</p>
+          </article>
+          <article class="tl">
+            <time>2026／1／1 起</time>
+            <p>擴大給付對象：全年齡失智且失能者（含 49 歲以下），以及急性後期整合照護（PAC）收案對象，讓年輕型失智與中壯年急性後期個案也能銜接長照復能。</p>
+          </article>
+          <article class="tl">
+            <time>2026／7／1 起</time>
+            <p>新增智慧科技輔具全租賃，每 3 年最高 6 萬元（含移位、移動、沐浴排泄、居家照顧床、安全看視），與傳統輔具每 3 年 4 萬元方案二擇一。</p>
+          </article>
+        </div>
+
+        <h3>長照 2.0 與 3.0，差在哪？</h3>
+        <div class="compare-wrap">
+          <table class="compare">
+            <thead>
+              <tr><th>項目</th><th>長照 2.0</th><th>長照 3.0</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="項目">服務對象</td>
+                <td data-label="長照 2.0">65 歲以上失能者、50 歲以上失智者、身障者、55 歲以上原住民</td>
+                <td data-label="長照 3.0">擴大至全年齡失智且失能者、PAC 個案；外籍看護家庭也可使用部分長照服務</td>
+              </tr>
+              <tr>
+                <td data-label="項目">輔具</td>
+                <td data-label="長照 2.0">以購置／租賃為主，每 3 年 4 萬元額度</td>
+                <td data-label="長照 3.0">可改選智慧輔具全租賃，每 3 年最高 6 萬元，較能隨體況更換</td>
+              </tr>
+              <tr>
+                <td data-label="項目">喘息與交通</td>
+                <td data-label="長照 2.0">居家喘息多限室內；交通每趟較低</td>
+                <td data-label="長照 3.0">安全許可下可至戶外；交通與營養照護額度上調；外看家庭請假可申請喘息／短照，每年最多合計 52 天</td>
+              </tr>
+              <tr>
+                <td data-label="項目">醫療銜接</td>
+                <td data-label="長照 2.0">出院後常出現服務空窗</td>
+                <td data-label="長照 3.0">強化出院準備，盼出院後數日內銜接長照資源</td>
+              </tr>
+              <tr>
+                <td data-label="項目">住宿式補助</td>
+                <td data-label="長照 2.0">舊制額度較低，且曾有排富設計</td>
+                <td data-label="長照 3.0">中重度失能者入住適用機構，2026 年再加碼為每月最高 15,000 元、全年最高 18 萬元，並取消排富；須達第 4 級以上（或符合身障／既有住民等條件），且當月入住日數須達一半以上</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note" style="margin-top:8px">2.0／3.0 對照主要整理自牙驛通懶人包。該文撰寫時住宿式補助曾載為全年最高 12 萬元；其後衛福部與行政院於 2026 年宣布調增至每月最高 15,000 元、全年最高 18 萬元，本頁以官方最新公告為準。</p>
+
+        <h3 style="margin-top:28px">五個現實缺口：點開看為什麼還需要自己準備</h3>
+        <div class="gaps">
+          <div class="gap-card open">
+            <button class="opener" type="button" aria-expanded="true">1. 補助有上限，不是實報實銷</button>
+            <div class="more">照顧及專業服務每月最高 10,020–36,180 元（第 2–8 級）；交通、輔具、喘息各有獨立額度且不得流用。機構住宿式補助即使加碼，也是每月最高 15,000 元。超過額度的部分，全部自費。</div>
+          </div>
+          <div class="gap-card">
+            <button class="opener" type="button" aria-expanded="false">2. 一般戶仍要自負 16%</button>
+            <div class="more">長照服務不會因經濟狀況「少給服務」，但部分負擔不同：低收入戶 0%、中低收入戶照顧／喘息約 5%、一般戶約 16%。輔具與無障礙一般戶自負更高（約 30%），交通接送一般戶約 21–30%。對多數家庭來說，補助不是全額免費。</div>
+          </div>
+          <div class="gap-card">
+            <button class="opener" type="button" aria-expanded="false">3. 不包含 24 小時全天照護</button>
+            <div class="more">居家服務是「時段式」協助，無法覆蓋全天。中央社 2023 年曾報導南投埔里一個家庭：父親中風後，即使有居服員分擔，像抽痰這類醫療行為仍須家人處理，照顧者還是難以長時間出門。長照 3.0 能減輕負擔，但不能變成一位全天看護。</div>
+          </div>
+          <div class="gap-card">
+            <button class="opener" type="button" aria-expanded="false">4. 機構與外籍看護的缺口特別大</button>
+            <div class="more">外籍看護薪水不在長照「四包錢」裡，聘僱家庭最多只能使用照顧及專業服務額度的 30%（且不能用居家服務）。機構雙人房月費常達 4.5–6 萬，即使領到每月 1.5 萬補助，自付仍可能有 3 萬以上；且領取住宿式補助的月份，通常不得同時使用居家、交通、輔具、喘息等服務。</div>
+          </div>
+          <div class="gap-card">
+            <button class="opener" type="button" aria-expanded="false">5. 耗材、營養品與離職損失沒有給付</button>
+            <div class="more">紙尿布、看護墊、管灌營養、濕紙巾與多數耗材需自費；家人請假、留停或離職的薪資損失，也不在長照給付範圍。這往往才是把家庭財務磨薄的那一塊。</div>
+          </div>
+        </div>
+
+        <p class="quote-line">用長照 3.0 支撐生活，用商業保險維繫尊嚴。政府補助負責打底，保險與家庭準備負責補上缺口，讓照顧選擇不必只剩「誰該犧牲」。</p>
+      </div>
+    </section>
+
+    <section id="plan">
+      <div class="wrap">
+        <p class="section-kicker">第五章</p>
+        <h2>如果現在規劃，可以避免什麼？</h2>
+        <p class="lede">同樣面對 8–10 年照顧，提早準備與事到臨頭，差的不只是錢，還有家庭關係、照顧品質，以及未來投保時的體況與保費。</p>
+
+        <div class="switcher" role="tablist">
+          <button class="on" type="button" data-face="now">現在提前規劃</button>
+          <button type="button" data-face="later">事到臨頭才面對</button>
+        </div>
+        <div class="contrast">
+          <article class="face" data-face="now">
+            <p class="when">家庭存款</p>
+            <h3>先守住退休金與緊急預備金</h3>
+            <p>用預定的現金流去對應看護費、機構差額或耗材，比較不必在急迫時一次動用房子、定存或子女教育基金。</p>
+          </article>
+          <article class="face" data-face="now">
+            <p class="when">子女工作與情緒</p>
+            <h3>讓下一代仍有選擇權</h3>
+            <p>孩子不必立刻在「辭職回家」與「掙扎兼顧」之間二選一，比較有空間尋找適合的照顧組合，也減少照顧者孤立與自責。</p>
+          </article>
+          <article class="face" data-face="now">
+            <p class="when">照護品質選擇權</p>
+            <h3>選得到適合的人與環境</h3>
+            <p>有預算時，才能比較外籍或本國看護、雙人房或單人房、是否搭配日照與喘息，而不是只能接受當下唯一付得起的安排。</p>
+          </article>
+          <article class="face" data-face="now">
+            <p class="when">體況與保費成本</p>
+            <h3>在還健康時把位子留好</h3>
+            <p>商業長照相關保障通常要在投保當時健康告知與核保通過。體況變化後，可能變成加費、除外，或無法承保。現在規劃，是在為未來保留選擇。</p>
+          </article>
+
+          <article class="face" data-face="later" hidden>
+            <p class="when">家庭存款</p>
+            <h3>容易先燒掉最方便取用的錢</h3>
+            <p>醫院臨時看護一天就可能要 2,600–3,200 元；機構或看護月費接著上門，退休準備與家庭存款往往最先被拿來填缺口。</p>
+          </article>
+          <article class="face" data-face="later" hidden>
+            <p class="when">子女工作與情緒</p>
+            <h3>照顧與收入互相排擠</h3>
+            <p>如同公開報導中的家庭：辭去教職陪伴、放下工作就請不起看護、或年輕子女提前成為主要照顧者。壓力會同時落在經濟與關係上。</p>
+          </article>
+          <article class="face" data-face="later" hidden>
+            <p class="when">照護品質選擇權</p>
+            <h3>選擇會被預算追著跑</h3>
+            <p>可能只能先找得到的人力、等得到的床位，難以為被照顧者與照顧者同時安排較合適的環境。</p>
+          </article>
+          <article class="face" data-face="later" hidden>
+            <p class="when">體況與保費成本</p>
+            <h3>需要保障時，反而最難買</h3>
+            <p>中風、失智或已達長期照顧狀態後，通常已無法再以一般條件投保長照險。準備若等到「已經需要」才開始，選項會變少、成本也會變高。</p>
+          </article>
+        </div>
+
+        <div class="cta">
+          <h2>把家庭的雙軌長照帳，算清楚再決定</h2>
+          <p>政府長照 3.0 值得申請、也值得用好；但 8–10 年的照顧費、耗材與家人的時間，仍需要家庭自己的財務安排。若你願意，可以請服務專員依你家的成員、預算與體況，整理一份雙軌長照試算，再一起討論適不適合、要怎麼補缺口。</p>
+          <div class="btn-row" style="justify-content:center">
+            <a class="btn" href="#cost" style="background:#fff;color:#1C4A3A">回到費用試算</a>
+            <a class="btn-ghost btn" href="#quiz" style="border-color:#fff;color:#fff">重看開頭的三個問題</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <h3>資料來源</h3>
+      <ul>
+        <li>天下雜誌／銀天下：〈長照10年要花多少錢？一表看懂4種照顧模式費用，如何用雙軌財務規劃自救？〉，賴惠玲，2026 年 7 月 9 日。<a href="https://www.cw.com.tw/aging/article/5141960" target="_blank" rel="noopener">原文</a></li>
+        <li>衛生福利部 1966 長照專區：申請資格、給付額度、外籍看護家庭使用規定。<a href="https://1966.gov.tw/LTC/cp-6533-70777-207.html" target="_blank" rel="noopener">頁面</a></li>
+        <li>全國法規資料庫：《長期照顧服務申請及給付辦法》（含 115 年擴大對象與分期施行）。</li>
+        <li>衛生福利部／行政院：2026 年住宿式服務機構使用者補助調增為每月最高 15,000 元、全年最高 18 萬元。<a href="https://www.mohw.gov.tw/cp-7403-87881-1.html" target="_blank" rel="noopener">衛福部新聞稿</a></li>
+        <li>牙驛通：〈2026 最新長照 3.0 懶人包〉（新制、補助、申請方式與 2.0 差異，文末註明參考衛福部《長期照顧十年計畫 3.0》，2026 年 8 月更新）。<a href="https://www.dentist2home.com/post/%E3%80%90%E9%95%B7%E7%85%A73-0%E6%87%B6%E4%BA%BA%E5%8C%85%E3%80%91%E7%89%99%E9%A9%9B%E9%80%9A%E9%99%AA%E4%BD%A0%E7%9C%8B%E6%87%82%E6%96%B0%E6%94%BF%E7%AD%96-%E8%A3%9C%E5%8A%A9%E9%A0%85%E7%9B%AE%E3%80%81%E7%94%B3%E8%AB%8B%E6%96%B9%E5%BC%8F%E3%80%81%E8%88%87%E9%95%B7%E7%85%A72-0%E5%B7%AE%E5%9C%A8%E5%93%AA" target="_blank" rel="noopener">原文</a></li>
+        <li>保險相關法規查詢系統：金管會《長期照顧保險單示範條款》（生理功能障礙六取三、認知功能障礙 CDR ≧ 2）。</li>
+        <li>真實案例：蘋果慈善基金會報導（43 歲中風個案）；聯合報／元氣網 2025 年 9 月 19 日（劉芸妡照顧年輕型失智母親）；中央社 2023 年 10 月 30 日（林小姐照顧中風失智母親）。</li>
+        <li>耗材參考行情：保險事業發展中心，經藥師+轉引。</li>
+      </ul>
+      <p class="disclaimer">本網站僅供長照政策與財務風險教育參考，不構成保險招攬、投資建議或任何形式的承保承諾。實際補助資格、額度與部分負擔，以衛生福利部、地方政府及當年度公告為準；實際理賠條件、等待期與除外責任，以各保險公司保單條款為準。費用試算採公開行情中位數或代表值，各地區、機構與個案狀況會有差異。</p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
